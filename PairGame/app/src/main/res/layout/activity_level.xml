@@ -5,25 +5,27 @@
 
     <data>
         <variable
-            name="gameVM"
-            type="com.mistpaag.pairgame.viewmodel.GameVM" />
+            name="levelVM"
+            type="com.mistpaag.pairgame.viewmodel.LevelVM" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/colorPrimary"
-        tools:context=".view.GameActivity">
+        tools:context=".view.LevelActivity">
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recycle_game"
+            android:id="@+id/recycler_level"
             android:layout_width="0dp"
             android:layout_height="0dp"
+            tools:listitem="@layout/item_level"
+            tools:itemCount="10"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
-            />
+            app:layout_constraintTop_toTopOf="parent" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

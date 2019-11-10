@@ -1,25 +1,23 @@
-package com.mistpaag.pairgame
+package com.mistpaag.pairgame.view
 
-import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.AttributeSet
-import android.util.Log
-import android.view.View
+import androidx.databinding.DataBindingUtil
+import com.mistpaag.pairgame.R
 import com.mistpaag.pairgame.adapter.LevelAdapter
-import kotlinx.android.synthetic.main.activity_main.*
-import android.widget.Toast
-import java.security.AccessController.getContext
+import com.mistpaag.pairgame.databinding.ActivityLevelBinding
 
+class LevelActivity : AppCompatActivity() {
 
-class MainActivity : AppCompatActivity() {
+    lateinit var binding: ActivityLevelBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_level)
+
         val adapter = LevelAdapter(){
-            val intent = Intent(this,GameActivity::class.java)
+            val intent = Intent(this, GameActivity::class.java)
             /*intent.putExtra("imagen1","imagen1")
             intent.putExtra("imagen2","imagen2")
             intent.putExtra("imagen3","imagen3")*/
@@ -27,10 +25,6 @@ class MainActivity : AppCompatActivity() {
             intent.putExtra("lista",list)
             startActivity(intent)
         }
-        recycler_level.adapter = adapter
-
-
+        binding.recyclerLevel.adapter = adapter
     }
-
-
 }
