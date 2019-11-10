@@ -14,17 +14,10 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        val intent = Intent(this, LevelActivity::class.java)
+        startActivity(intent)
 
-        val adapter = LevelAdapter(){
-            val intent = Intent(this, GameActivity::class.java)
-            /*intent.putExtra("imagen1","imagen1")
-            intent.putExtra("imagen2","imagen2")
-            intent.putExtra("imagen3","imagen3")*/
-            val list = arrayOf("imagen1","imagen2")
-            intent.putExtra("lista",list)
-            startActivity(intent)
-        }
-        recycler_level.adapter = adapter
+
 
 
     }
