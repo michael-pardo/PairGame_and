@@ -1,4 +1,7 @@
 package com.mistpaag.pairgame.viewmodel
 
-class MainVM {
+import androidx.lifecycle.ViewModel
+
+class MainVM: ViewModel() {
+
 }
