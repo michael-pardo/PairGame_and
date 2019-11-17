@@ -18,7 +18,7 @@
         <ImageView
             android:id="@+id/imageView2"
             android:layout_width="0dp"
-            android:layout_height="200dp"
+            android:layout_height="@dimen/height_logo"
             android:layout_marginStart="40dp"
             android:layout_marginEnd="40dp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -27,7 +27,8 @@
             app:srcCompat="@drawable/logo" />
 
         <com.google.android.material.textfield.TextInputLayout
-            android:layout_width="329dp"
+            android:id="@+id/textInputLayout"
+            android:layout_width="0dp"
             android:layout_height="39dp"
             android:layout_marginStart="@dimen/margin"
             android:layout_marginTop="@dimen/margin"
@@ -43,5 +44,60 @@
                 android:layout_height="wrap_content"
                 android:hint="hint" />
         </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textInputLayout2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin"
+            android:layout_marginTop="@dimen/margin"
+            android:layout_marginEnd="@dimen/margin"
+            android:hint="Passwd"
+            android:textColorHint="@color/text"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textInputLayout">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="hint" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Button
+            android:id="@+id/bnt_login"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin"
+            android:layout_marginTop="@dimen/margin"
+            android:layout_marginEnd="@dimen/margin"
+            android:text="Login"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textInputLayout2" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin"
+            android:layout_marginTop="@dimen/margin"
+            android:text="Forgot Password?"
+            android:textColor="@color/text"
+            app:layout_constraintStart_toEndOf="@+id/bnt_login"
+            app:layout_constraintTop_toBottomOf="@+id/bnt_login" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin"
+            android:layout_marginEnd="@dimen/margin"
+            android:layout_marginBottom="@dimen/margin"
+            android:text="Don’t have a account?, REGISTER."
+            android:textColor="@color/text"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
