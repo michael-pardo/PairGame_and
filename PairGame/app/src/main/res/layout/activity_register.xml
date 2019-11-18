@@ -34,7 +34,7 @@
             android:layout_height="wrap_content">
 
             <ImageView
-                android:id="@+id/img_avatar"
+                android:id="@+id/img_rank_avatar"
                 android:layout_width="150dp"
                 android:layout_height="150dp"
                 android:layout_marginTop="16dp"
@@ -49,8 +49,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="120dp"
                 android:layout_marginTop="120dp"
-                app:layout_constraintStart_toStartOf="@+id/img_avatar"
-                app:layout_constraintTop_toTopOf="@+id/img_avatar"
+                app:layout_constraintStart_toStartOf="@+id/img_rank_avatar"
+                app:layout_constraintTop_toTopOf="@+id/img_rank_avatar"
                 app:srcCompat="@drawable/cam" />
 
             <com.google.android.material.textfield.TextInputLayout

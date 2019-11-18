@@ -19,7 +19,7 @@
             android:layout_weight="4">
 
             <ImageView
-                android:id="@+id/imageView6"
+                android:id="@+id/img_rank_pos"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="0"
@@ -30,14 +30,14 @@
                 app:srcCompat="@drawable/circle" />
 
             <TextView
-                android:id="@+id/textView6"
+                android:id="@+id/tx_rank_position"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
                 android:gravity="center"
                 android:text="1"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="@+id/imageView6"
+                app:layout_constraintStart_toStartOf="@+id/img_rank_pos"
                 app:layout_constraintTop_toTopOf="parent" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -47,7 +47,7 @@
             android:layout_weight="4">
 
             <ImageView
-                android:id="@+id/imageView7"
+                android:id="@+id/img_rank_avatar"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -64,7 +64,7 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/textView2"
+                android:id="@+id/tx_rank_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="5"
@@ -75,7 +75,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="5"
-                android:text="TextView" />
+                android:text="tx_rank_score" />
         </LinearLayout>
 
     </LinearLayout>
