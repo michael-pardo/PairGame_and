@@ -2,5 +2,5 @@
 <resources>
 
     <dimen name="margin">20dp</dimen>
-    <dimen name="height_logo">200dp</dimen>
+    <dimen name="height_logo">100dp</dimen>
 </resources>

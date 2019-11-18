@@ -21,10 +21,16 @@ class MainActivity : AppCompatActivity() {
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
         mainVM = ViewModelProviders.of(this).get(MainVM::class.java)
 
-        bnt_login.setOnClickListener {
+        binding.bntLogin.setOnClickListener {
             val intent = Intent(this, LevelActivity::class.java)
             startActivity(intent)
         }
+
+        binding.txtRegister.setOnClickListener {
+            val intent = Intent(this, RegisterActivity::class.java)
+            startActivity(intent)
+        }
+
 
 
 
