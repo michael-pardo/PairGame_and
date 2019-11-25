@@ -28,4 +28,11 @@
         <item name="android:textSize">18sp</item>
     </style>
 
+    <style name="ranking" parent="text">
+        <item name="android:layout_marginTop">10dp</item>
+        <item name="android:layout_marginEnd">0dp</item>
+        <item name="android:layout_marginStart">0dp</item>
+        <item name="android:textSize">18sp</item>
+    </style>
+
 </resources>
