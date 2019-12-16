@@ -26,7 +26,7 @@ class RankingAdapter(val itemClick:(Level)-> Unit): RecyclerView.Adapter<Ranking
     class LevelFolder(itemView: View, val itemClick: (Level) -> Unit):RecyclerView.ViewHolder(itemView) {
         fun bindView(level: String, position: Int){
             with(level){
-                itemView.txtLevel.text = level
+                itemView.btn_world.text = level
             }
             itemView.setOnClickListener { itemClick(Level(level="Hola$position")) }
         }
