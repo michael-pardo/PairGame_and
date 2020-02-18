@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "616138340878",
+    "firebase_url": "https://pair-game-unillanos.firebaseio.com",
+    "project_id": "pair-game-unillanos",
+    "storage_bucket": "pair-game-unillanos.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:616138340878:android:9dcb5036e959a96860da5f",
+        "android_client_info": {
+          "package_name": "com.mistpaag.pairgame"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "616138340878-n9cnh1catc1r73uk290k62ogulf5b134.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.mistpaag.pairgame",
+            "certificate_hash": "f1ba3abc540fab8c9953bdf23d4a8c48a66d76ce"
+          }
+        },
+        {
+          "client_id": "616138340878-tgoe45odeektrhaokmv23s3rfdpothn4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDd1CYJX37ueUTr2Gvn8O02SEG52YRlYnY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "616138340878-tgoe45odeektrhaokmv23s3rfdpothn4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
