@@ -28,7 +28,6 @@ class LevelActivity : AppCompatActivity() {
             startActivity(intent)
         }
         binding.recyclerLevel.adapter = adapter
-        binding.
     }
 
     override fun onBackPressed() {

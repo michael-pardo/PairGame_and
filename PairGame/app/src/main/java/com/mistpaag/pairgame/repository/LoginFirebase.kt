@@ -1,13 +1,18 @@
 package com.mistpaag.pairgame.repository
 
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
 import com.google.firebase.auth.FirebaseAuth
+import com.mistpaag.pairgame.model.Response
 
 class LoginFirebase {
     private val mAuth: FirebaseAuth by lazy {
         FirebaseAuth.getInstance()
     }
 
-    fun datosLogin(user:String, pass:String):Unit{
+private val response = MutableLiveData<Response>()
+
+    fun login(user:String, pass:String):MutableLiveData<Response>{
         if (user.isNotEmpty() && pass.isNotEmpty()){
             this.mAuth.signInWithEmailAndPassword(user, pass).addOnCompleteListener { task ->
                 if (task.isSuccessful){
@@ -15,10 +20,15 @@ class LoginFirebase {
 //                    loginInterface.existeUser()
                 }
             }.addOnFailureListener { exception ->
+
+                val res = Response(false, exception)
+                response.value = res
 //                loginInterface.mostrarMensaje(FuncsObj.verificarException(exception))
             }
 
+
         }
+        return response
 //        else loginInterface.mostrarMensaje("Por favor completa los campos")
     }
 

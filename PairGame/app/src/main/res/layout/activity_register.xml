@@ -51,7 +51,8 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/textInputLayout3"
-                    app:srcCompat="@drawable/icon_facebook" />
+                    android:tag="0"
+                    app:srcCompat="@drawable/avatar_1" />
 
                 <ImageView
                     android:id="@+id/img_avatar"
@@ -92,6 +93,7 @@
                     app:layout_constraintTop_toBottomOf="@+id/ti_email">
 
                     <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/passwd_input"
                         style="@style/personal_info"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -99,7 +101,7 @@
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/ti_name"
+                    android:id="@+id/til_name"
                     android:layout_width="match_parent"
                     android:textColorHint="@color/text"
                     android:layout_height="wrap_content"
@@ -108,6 +110,7 @@
                     app:layout_constraintTop_toTopOf="parent">
 
                     <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/name_input"
                         style="@style/personal_info"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -122,9 +125,10 @@
                     android:layout_marginTop="@dimen/margin"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/ti_name">
+                    app:layout_constraintTop_toBottomOf="@+id/til_name">
 
                     <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/email_input"
                         style="@style/personal_info"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -132,7 +136,7 @@
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <Button
-                    android:id="@+id/button"
+                    android:id="@+id/register_btn"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="24dp"
