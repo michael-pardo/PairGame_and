@@ -26,7 +26,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
         viewModel = ViewModelProviders.of(this).get(MainVM::class.java)
-        FirebaseApp.initializeApp(this);
+        FirebaseApp.initializeApp(this)
 
         binding.bntLogin.setOnClickListener {
 //            mainVM.login(binding.u`ser)

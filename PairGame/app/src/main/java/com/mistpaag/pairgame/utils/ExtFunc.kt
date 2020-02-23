@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
+import com.google.android.material.textfield.TextInputEditText
 import com.mistpaag.pairgame.R
 
 fun ViewGroup.inflate(layoutId: Int): View {
@@ -22,3 +23,7 @@ fun ImageView.toNormal(){
 fun Any.toInte(): Int {
     return this.toString().toInt()
 }
+
+fun TextInputEditText.isVoid(): Boolean = this.text?.isEmpty()!!
+
+fun TextInputEditText.getTxt(): String = this.text.toString()

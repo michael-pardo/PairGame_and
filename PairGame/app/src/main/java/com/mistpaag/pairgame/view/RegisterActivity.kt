@@ -1,48 +1,73 @@
 package com.mistpaag.pairgame.view
 
 import android.app.Dialog
+import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.view.Window
 import android.view.WindowManager
 import android.widget.Button
 import android.widget.ImageView
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
+import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import com.mistpaag.pairgame.R
 import com.mistpaag.pairgame.databinding.ActivityRegisterBinding
-import com.mistpaag.pairgame.utils.toGray
-import com.mistpaag.pairgame.utils.toInte
+import com.mistpaag.pairgame.utils.*
 
-import com.mistpaag.pairgame.utils.toNormal
 import com.mistpaag.pairgame.viewmodel.RegisterVM
 
 
 class RegisterActivity : AppCompatActivity() {
 
-    lateinit var registerVM: RegisterVM
+    lateinit var viewModel: RegisterVM
     lateinit var binding: ActivityRegisterBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_register)
-        registerVM = ViewModelProviders.of(this).get(RegisterVM::class.java)
+        viewModel = ViewModelProviders.of(this).get(RegisterVM::class.java)
+        binding.viewModel = viewModel
 
-        binding.imgAvatar.setOnClickListener {
-            showDialog()
+        with(binding){
+
+            imgAvatar.setOnClickListener {
+                showDialog()
+            }
+
+            imgRankAvatar.setOnClickListener {
+                showDialog()
+            }
+
+            registerBtn.setOnClickListener {
+                register()
+            }
+
         }
 
-        binding.imgRankAvatar.setOnClickListener {
-            showDialog()
-        }
+        viewModel.response.observe(this, Observer {
+            if (it.admit){
+                val intent = Intent(this, LevelActivity::class.java)
+                startActivity(intent)
+            }else errorToast(it.objec)
+        })
+
+
     }
 
     fun register(){
-        val lol = "lol"
+        with(binding){
+            if (nameInput.isVoid() || emailInput.isVoid()  || passwdInput.isVoid() ){
+                errorToast("Fill all inputs.")
+            }else{
+                viewModel?.register(nameInput.getTxt(), emailInput.getTxt(), passwdInput.getTxt(), lastTag)
+            }
+        }
     }
 
 
+    var lastTag = 0
     private fun showDialog() {
         val dialog = Dialog(this)
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE)
@@ -53,11 +78,10 @@ class RegisterActivity : AppCompatActivity() {
         val ava3 = dialog.findViewById(R.id.avatar3_ima) as ImageView
         val ava4 = dialog.findViewById(R.id.avatar4_ima) as ImageView
         val imgs = listOf(ava1, ava2, ava3, ava4)
-        var lastTag = binding.imgRankAvatar.tag.toString().toInte()
+        lastTag = binding.imgRankAvatar.tag.toString().toInte()
 
 
         for ((i,avatar) in imgs.withIndex()){
-            Log.d("lol","${binding.imgRankAvatar.tag}, $i")
             if (i == lastTag ){
                 avatar.toNormal()
                 lastTag = i
@@ -73,7 +97,8 @@ class RegisterActivity : AppCompatActivity() {
         ava4.setOnClickListener {drawImage(ava4, imgs[lastTag])}
         yesBtn.setOnClickListener {
             with(binding.imgRankAvatar){
-                this.setImageDrawable(imgs[this.tag.toInte()].drawable)
+                this.tag = lastTag
+                this.setImageDrawable(imgs[lastTag].drawable)
                 dialog .dismiss()
             }
 
@@ -90,6 +115,11 @@ class RegisterActivity : AppCompatActivity() {
     private fun drawImage(avatar: ImageView, imageView: ImageView) {
         imageView.toGray()
         avatar.toNormal()
-        binding.imgRankAvatar.tag = avatar.tag.toInte()
+        lastTag = avatar.tag.toInte()
+
+    }
+
+    private fun errorToast(mssg:Any){
+        Toast.makeText(this, mssg.toString(), Toast.LENGTH_LONG ).show()
     }
 }
